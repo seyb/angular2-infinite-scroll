@@ -1,8 +1,10 @@
 import { PositionStats, ScrollerConfig } from './models';
-import { Injectable } from '@angular/core';
 
-@Injectable()
 export class ScrollResolver {
+  static create() {
+    return new ScrollResolver();
+  }
+
   public lastScrollPosition: number = 0;
 
   shouldScroll (container: PositionStats, config: ScrollerConfig, scrollingDown: boolean) {

@@ -2,6 +2,22 @@ import { ElementRef } from '@angular/core';
 
 export type ContainerRef = Window | ElementRef | any;
 
+export interface InfiniteScrollOptions {
+  distanceDown: number;
+  distanceUp: number;
+  throttle: number;
+  disabled: boolean;
+  scrollWindow: boolean;
+  immediate: boolean;
+  horizontal: boolean;
+  alwaysCallback: boolean;
+  throttleType: string;
+  on?: {
+    scrollDown: Function;
+    scrollUp: Function;
+  }
+}
+
 export interface InfiniteScrollEvent {
   currentScrollPosition: number;
 };

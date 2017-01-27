@@ -1,10 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
-
-@Injectable()
 export class AxisResolverFactory {
-  constructor() { }
-
-  create(vertical: boolean = true) {
+  static create(vertical: boolean = true) {
     return new AxisResolver(vertical);
   }
 }

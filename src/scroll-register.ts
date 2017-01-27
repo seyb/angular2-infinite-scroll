@@ -1,5 +1,5 @@
+import { PositionResolver, PositionResolverFactory } from './position-resolver';
 import { ContainerRef } from './models';
-import { Injectable, ElementRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/timer';
@@ -10,21 +10,25 @@ import 'rxjs/add/operator/filter';
 
 
 export interface ScrollRegisterConfig {
-  container: ContainerRef;
   throttleType: string;
   throttleDuration: number;
   filterBefore: Function;
-  mergeMap: Function;
   scrollHandler: Function;
+  scrollWindow: boolean;
+  horizontal: boolean;
 }
 
-@Injectable()
 export class ScrollRegister {
-  attachEvent (options: ScrollRegisterConfig): Subscription {
-    const scroller$: Subscription = Observable.fromEvent(options.container, 'scroll')
+  static attachEvent (options: ScrollRegisterConfig, element: HTMLElement): Subscription {
+    const containerElement = options.scrollWindow ? window : element;
+    const positionResolver = PositionResolverFactory.create({
+      windowElement: containerElement,
+      horizontal: options.horizontal
+    });
+    const scroller$: Subscription = Observable.fromEvent(positionResolver.container, 'scroll')
       [options.throttleType](() => Observable.timer(options.throttleDuration))
       .filter(options.filterBefore)
-      .mergeMap((ev: any) => Observable.of(options.mergeMap(ev)))
+      .mergeMap((ev: any) => Observable.of(positionResolver.calculatePoints(element)))
       .subscribe(options.scrollHandler);
     return scroller$;
   }

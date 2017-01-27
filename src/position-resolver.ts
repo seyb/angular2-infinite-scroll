@@ -1,15 +1,9 @@
-import { Injectable, ElementRef } from '@angular/core';
 import { AxisResolver, AxisResolverFactory } from './axis-resolver';
 import { ContainerRef, PositionElements, PositionStats } from './models';
 
-@Injectable()
 export class PositionResolverFactory {
-
-  constructor(private axisResolver: AxisResolverFactory) {
-  }
-
-  create (options: PositionElements) {
-    return new PositionResolver(this.axisResolver.create(!options.horizontal), options);
+  static create (options: PositionElements) {
+    return new PositionResolver(AxisResolverFactory.create(!options.horizontal), options);
   }
 }
 
@@ -44,23 +38,23 @@ export class PositionResolver {
       : null;
   }
 
-  calculatePoints (element: ElementRef) {
+  calculatePoints (element: HTMLElement) {
     return this.isContainerWindow
       ? this.calculatePointsForWindow(element)
       : this.calculatePointsForElement(element);
   }
 
-  calculatePointsForWindow (element: ElementRef): PositionStats {
+  calculatePointsForWindow (element: HTMLElement): PositionStats {
     // container's height
     const height = this.height(this.container);
     // scrolled until now / current y point
     const scrolledUntilNow = height + this.pageYOffset(this.getDocumentElement());
     // total height / most bottom y point
-    const totalToScroll = this.offsetTop(element.nativeElement) + this.height(element.nativeElement);
+    const totalToScroll = this.offsetTop(element) + this.height(element);
     return { height, scrolledUntilNow, totalToScroll };
   }
 
-  calculatePointsForElement (element: ElementRef) {
+  calculatePointsForElement (element: HTMLElement) {
     let scrollTop    = this.axis.scrollTopKey();
     let scrollHeight = this.axis.scrollHeightKey();
     const container = this.container;

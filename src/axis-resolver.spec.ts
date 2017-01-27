@@ -1,16 +1,7 @@
-import {
-  async,
-  inject
-} from '@angular/core/testing';
-
 import { InfiniteScroll } from './infinite-scroll';
 import { AxisResolver } from './axis-resolver';
-import { ElementRef } from '@angular/core';
 
 describe('AxisResolver Class', () => {
-  const makeMockElement =
-    (): ElementRef => { return new ElementRef(document.createElement('div'));};
-
   const base_names = ['clientHeight', 'offsetHeight', 'scrollHeight'];
 
   it('should create an instance of AxisResolver', () => {
