@@ -1,36 +1,58 @@
 {
-  "name": "angular2-infinite-scroll",
-  "version": "0.3.4",
-  "description": "An infinite scroll directive for angular2",
-  "main": "angular2-infinite-scroll.js",
-  "typings": "./angular2-infinite-scroll.d.ts",
-  "repository": "orizens/angular2-infinite-scroll",
-  "scripts": {
-    "build:test": "tsc --project ./src",
-    "clean": "npm run clean:jsfiles && npm run clean:typefiles && npm run clean:metadata",
-    "clean:jsfiles": "rimraf src/*.js && rimraf ./*scroll.js",
-    "clean:typefiles": "rimraf src/*.d.ts && rimraf ./*scroll.d.ts",
-    "clean:node": "rimraf node_modules",
-    "clean:metadata": "rimraf ./*metadata.json && rimraf src/ngfactory && rimraf ./src/*.metadata.json",
-    "bdd": "NODE_ENV='bdd' karma start karma.conf.js",
-    "lite": "lite-server",
-    "postversion": "git push origin master",
-    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js && node make.js",
-    "pretest": "npm run clean",
-    "preversion": "npm run clean && npm run prepublish && npm test",
-    "setup": "npm run typings -- install",
-    "start": "npm run build && npm run lite",
-    "test": "karma start karma.conf.js",
-    "version": "git add ./",
-    "watch": "tsc --project ./src --watch"
-  },
-  "keywords": [
-    "angular2",
-    "scroll",
-    "infinite"
+  "_args": [
+    [
+      {
+        "raw": "angular2-infinite-scroll@^0.3.1",
+        "scope": null,
+        "escapedName": "angular2-infinite-scroll",
+        "name": "angular2-infinite-scroll",
+        "rawSpec": "^0.3.1",
+        "spec": ">=0.3.1 <0.4.0",
+        "type": "range"
+      },
+      "/home/inside/spirit-bogos/front/releases/20170411084146"
+    ]
   ],
-  "author": "Oren Farhi",
-  "license": "MIT",
+  "_from": "angular2-infinite-scroll@>=0.3.1 <0.4.0",
+  "_id": "angular2-infinite-scroll@0.3.4",
+  "_inCache": true,
+  "_location": "/angular2-infinite-scroll",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular2-infinite-scroll-0.3.4.tgz_1488364164086_0.8064443513285369"
+  },
+  "_npmUser": {
+    "name": "orizens",
+    "email": "farhioren@gmail.com"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular2-infinite-scroll@^0.3.1",
+    "scope": null,
+    "escapedName": "angular2-infinite-scroll",
+    "name": "angular2-infinite-scroll",
+    "rawSpec": "^0.3.1",
+    "spec": ">=0.3.1 <0.4.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-infinite-scroll/-/angular2-infinite-scroll-0.3.4.tgz",
+  "_shasum": "d011ab7dc7a85a2ca908540166b679a68d396f53",
+  "_shrinkwrap": null,
+  "_spec": "angular2-infinite-scroll@^0.3.1",
+  "_where": "/home/inside/spirit-bogos/front/releases/20170411084146",
+  "author": {
+    "name": "Oren Farhi"
+  },
+  "bugs": {
+    "url": "https://github.com/orizens/angular2-infinite-scroll/issues"
+  },
+  "dependencies": {},
+  "description": "An infinite scroll directive for angular2",
   "devDependencies": {
     "@angular/common": "2.3.1",
     "@angular/compiler": "2.3.1",
@@ -70,5 +92,53 @@
     "typescript": "2.0.3",
     "webpack": "2.1.0-beta.21",
     "zone.js": "^0.6.17"
-  }
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "d011ab7dc7a85a2ca908540166b679a68d396f53",
+    "tarball": "https://registry.npmjs.org/angular2-infinite-scroll/-/angular2-infinite-scroll-0.3.4.tgz"
+  },
+  "gitHead": "5bfe1ce789b7dd01c801d8a0c729131c952c7755",
+  "homepage": "https://github.com/orizens/angular2-infinite-scroll#readme",
+  "keywords": [
+    "angular2",
+    "scroll",
+    "infinite"
+  ],
+  "license": "MIT",
+  "main": "angular2-infinite-scroll.js",
+  "maintainers": [
+    {
+      "name": "orizens",
+      "email": "farhioren@gmail.com"
+    }
+  ],
+  "name": "angular2-infinite-scroll",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orizens/angular2-infinite-scroll.git"
+  },
+  "scripts": {
+    "bdd": "NODE_ENV='bdd' karma start karma.conf.js",
+    "build:test": "tsc --project ./src",
+    "clean": "npm run clean:jsfiles && npm run clean:typefiles && npm run clean:metadata",
+    "clean:jsfiles": "rimraf src/*.js && rimraf ./*scroll.js",
+    "clean:metadata": "rimraf ./*metadata.json && rimraf src/ngfactory && rimraf ./src/*.metadata.json",
+    "clean:node": "rimraf node_modules",
+    "clean:typefiles": "rimraf src/*.d.ts && rimraf ./*scroll.d.ts",
+    "lite": "lite-server",
+    "postversion": "git push origin master",
+    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js && node make.js",
+    "pretest": "npm run clean",
+    "preversion": "npm run clean && npm run prepublish && npm test",
+    "setup": "npm run typings -- install",
+    "start": "npm run build && npm run lite",
+    "test": "karma start karma.conf.js",
+    "version": "git add ./",
+    "watch": "tsc --project ./src --watch"
+  },
+  "typings": "./angular2-infinite-scroll.d.ts",
+  "version": "0.3.4"
 }
