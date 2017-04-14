@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/orizens/ngx-infinite-scroll.svg?branch=master)](https://travis-ci.org/orizens/angular2-infinite-scroll)
+[![Build Status](https://travis-ci.org/orizens/angular2-infinite-scroll.svg?branch=master)](https://travis-ci.org/orizens/angular2-infinite-scroll)
 
 # Angular Infinite Scroll
-Inspired by [ng-infinite-scroll](https://github.com/sroze/ngInfiniteScroll) directive for angular (> 2, 4).
+Inspired by [ng-infinite-scroll](https://github.com/sroze/ngInfiniteScroll) directive for angular (> 2).
 
 ## Angular Support
-Supports in Angular **> +2, 4 etc..**
+Supports in Angular **> +2, 4**
 
 ## Angular Consulting Services
 I'm a Senior Javascript Engineer & A Front End Consultant at [Orizens](http://orizens.com).
@@ -16,12 +16,12 @@ My services include:
 
 ## Installation
 ```
-npm install ngx-infinite-scroll --save
+npm install angular2-infinite-scroll --save
 ```
 
 ## Supported API
 Currently supported attributes:
-* **infiniteScrollDistance**<_number_> - (optional, default: **2**) - should get a number, the number of viewport lengths from the bottom of the page at which the event will be triggered.
+* **infiniteScrollDistance**<_number_> - (optional, default: **2**) - should get a number, the number of viewport lenghts from the bottom of the page at which the event will be triggered.
 * **infiniteScrollUpDistance**<_number_> - (optional, default: **1.5**) - should get a number
 * **infiniteScrollThrottle**<_number_> - (optional, default: **300**) - should get a number of **milliseconds** for throttle. The event will be triggered this many milliseconds after the user *stops* scrolling.
 * **infiniteScrollContainer**<_string|HTMLElement_> - (optional, default: null) - should get a html element or css selector for a scrollable element; window or current element will be used if this attribute is empty.
@@ -47,7 +47,7 @@ First, import the InfiniteScrollModule to your module:
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app';
 
@@ -117,7 +117,7 @@ In this example, the **onScrollDown** callback will be invoked when the window i
 
 ```typescript
 import { Component } from '@angular/core';
-import { InfiniteScroll } from 'ngx-infinite-scroll';
+import { InfiniteScroll } from 'angular2-infinite-scroll';
 
 @Component({
 	selector: 'app',
